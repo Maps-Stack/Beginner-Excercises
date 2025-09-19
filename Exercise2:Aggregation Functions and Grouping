@@ -1,0 +1,47 @@
+#Count()
+Select COUNT(*) AS total_employees
+from employees;
+
+#SUM ()
+Select SUM(salary) As total_IT_salary
+from employees
+WHERE department='IT';
+
+#AVERAGE()
+Select AVG(salary) As total_HR_salary
+from employees
+WHERE department='HR';
+
+#MIN() and MAX()
+Select MIN(salary) AS minimum_salary,
+       MAX(salary) AS maximum_salary
+from employees;
+
+#GROUP BY
+Select department,
+    SUM(salary) AS total_salary
+from employees
+GROUP BY  department;
+
+#HAVING Clause
+Select department,
+   SUM(salary) As total_salary
+ from employees
+GROUP BY department
+HAVING SUM(salary)>100000;
+
+#Combine Aggregate function
+Select department,
+AVG(salary) AS avg_salary
+from employees
+GROUP BY department
+ORDER BY avg_salary DESC;
+
+
+
+
+
+
+
+
+
