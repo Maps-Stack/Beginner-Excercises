@@ -1,0 +1,79 @@
+#Select statement
+Select* from employees;
+
+#Select Distinct statement
+select distinct department 
+from employees;
+
+#OrderBy Statement
+Select first-name,
+      last-name,
+      salary
+from employees
+orderBy salary DESC;
+
+#LIMIT Statement
+Select first-name,
+      last-name,
+      salary
+from employees
+orderBy salary DESC
+LIMIT 5;
+
+#WHERE Statement
+Select first-name,
+      last-name,
+      department
+from employees
+WHERE department='IT';
+
+#AND Statement
+Select first-name,
+      last-name,
+      department,
+salary
+from employees
+WHERE department='Finace'
+AND salar>58000;
+
+#OR statement
+Select first-name,
+      last-name
+from employees
+WHERE department='HR'
+OR department='Marketing';
+
+#NOT statement
+Select first-name,
+      last-name,
+      department
+from employees
+WHERE department !='IT';
+
+#IN statement
+Select first-name,
+      last-name,
+      department
+from employees
+WHERE department IN('HR', 'IT', 'Finance');
+
+#Combining conditions
+Select first-name,
+      last-name,
+      department,
+      salary,
+      city
+from employees
+WHERE department='IT'
+AND salar>58000, city='New York);
+
+#Combining WHERE, AND, and ORDERBY
+Select first-name,
+      last-name,
+      salary
+from employees
+WHERE department='Finance' OR department='Marketing'
+AND salary>52000
+ORDERBY salary DESC;
+
+
